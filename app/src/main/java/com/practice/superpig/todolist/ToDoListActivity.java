@@ -23,15 +23,11 @@ public class ToDoListActivity extends Activity {
 
         ListView myListView = (ListView) findViewById(R.id.myListView);
         final EditText myEditText = (EditText) findViewById(R.id.myEditText);
-
-        final ArrayList<String> todoItems = new ArrayList<>();
-
-        final ArrayAdapter<String> todoAA;
-
-        todoAA = new ArrayAdapter<>(this,
+        final ArrayList<String> todoItems = new ArrayList<String>();
+        final ArrayAdapter<String> itemAA = new ArrayAdapter<String>(this,
                                             android.R.layout.simple_list_item_1,
                                             todoItems);
-        myListView.setAdapter(todoAA);
+        myListView.setAdapter(itemAA);
 
         myEditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -40,7 +36,7 @@ public class ToDoListActivity extends Activity {
                     if ((keyCode == KeyEvent.KEYCODE_DPAD_CENTER)
                             || (keyCode == KeyEvent.KEYCODE_ENTER)){
                         todoItems.add(0, myEditText.getText().toString());
-                        todoAA.notifyDataSetChanged();
+                        itemAA.notifyDataSetChanged();
                         myEditText.setText("");
                         return true;
                     }
