@@ -4,6 +4,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
-    <string name="addItemHint">New To Do Item</string>
+    <string name="addItemHint">Auto New To Do Item</string>
     <string name="addItemContentDescription">New To Do Item</string>
 </resources>
